@@ -6,6 +6,7 @@ import com.corundumstudio.socketio.annotation.OnConnect;
 import com.corundumstudio.socketio.annotation.OnDisconnect;
 import com.corundumstudio.socketio.annotation.OnEvent;
 import io.github.skshiydv.connect.model.ChatMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,6 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ChatService {
     private final SocketIOServer server;
     private final ConcurrentHashMap<String, SocketIOClient> clients = new ConcurrentHashMap<>();
+    @Autowired
     public ChatService(SocketIOServer server) {
         this.server = server;
         server.addConnectListener(this::onConnect);

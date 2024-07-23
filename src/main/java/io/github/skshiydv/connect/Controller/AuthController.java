@@ -27,11 +27,11 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/auth/")
 public class AuthController {
-    private  userRepository userRepository;
-    private  rolesRepository roleRepository;
-    private  AuthenticationManager authenticationManager;
-    private  PasswordEncoder PasswordEncoder;
-    private JwtGenerator jwtGenerator;
+    private final userRepository userRepository;
+    private final rolesRepository roleRepository;
+    private final AuthenticationManager authenticationManager;
+    private final PasswordEncoder PasswordEncoder;
+    private final JwtGenerator jwtGenerator;
 
     @Autowired
     public AuthController(userRepository userRepository, rolesRepository roleRepository, AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder, JwtGenerator jwtGenerator) {
